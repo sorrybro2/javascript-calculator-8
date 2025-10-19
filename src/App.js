@@ -22,7 +22,7 @@ class App {
 
     // test 1 : 입력값 = ["//;\\n1"]
     if(input.startsWith("//")){// "//"로 시작한다면
-      const [delimitFull, calculation] = input.split("\\n"); // "\\n"기준으로 구분자와 계산식으로 나눔
+      const [delimitFull, calculation] = input.split(/\n|\\n/); // "\\n"기준으로 구분자와 계산식으로 나눔
       const CustomDelimit = delimitFull[2]; // "//"제외하고 커스텀 구분자만 빼옴
       nums = calculation.split(CustomDelimit).map(Number); // 계산식도 커스텀 구분자를 기준으로 split! 
     }else{ 
